@@ -916,8 +916,10 @@
         </ul>
       </div>
     </section>
+<!-- 
 
-    <!-- присвоить модалке класс backdrop is-hidden -->
+
+    присвоить модалке класс backdrop is-hidden
     <div class="backdrop is-hidden">
       <div class="advert-modal">
         <form class="modal-form">
@@ -951,7 +953,7 @@
           </label>
           <label class="modal-form-description"
             >Опис товару
-            <!-- <textarea class="modal-input" type="text" /> -->
+            <textarea class="modal-input" type="text" /> 
             <textarea class="modal-input"  name="" id="" cols="30" rows="10"></textarea>
           </label>
           <label for=""
@@ -968,7 +970,54 @@
           </label>
           <button class="modal-buttom" type="submit">ДОДАТИ</button>
         </form>
-      </div>
+      </div> 
+
+    </div> -->
+  <div class="backdrop is-hidden">
+    <div class="advert-modal">
+      <article>
+        <svg class="modal-close-icon" width="14px" height="14px">
+          <use href="/"></use>
+        </svg>
+        <h3 class="modal-title">Футболка спортивна</h3>
+        <p class="product-code">Код товару | 105-С</p>
+        <img class="advert-img" src="https://medialeaks.ru/wp-content/uploads/2019/08/2-33.jpg" alt="" >
+        <div class="advert-preload">
+          <!-- рендерить при появлении данных с бека -->
+          <div class="advert-img-preload">
+            <img src="/" alt="">
+          </div>
+
+        </div>
+        <div class=advert-svg>
+          <!-- рисовать для мобилки точки соответственно кол-ву фоток -->
+          <svg class="" width="5px" height="5px">
+            <use href="/"></use>
+          </svg>
+        </div>
+        <p class="advert-price">200.00 грн</p>
+        <button class="seller-information btn primary-btn" type="button">Информация о продавце</button>
+        <ul class="add-share">
+          <li><span>В обране </span>
+            <svg class="" width="16px" height="16px">
+            <use href="./symbol-defs.svg#icon-contured-heart"></use>
+          </svg></li>
+          <li><span>Поділитися</span>
+            <svg class="" width="14px" height="12px">
+              <use href="/"></use>
+            </svg>
+          </li>
+        </ul>
+        <p>Опис:</p>
+        <p>
+          Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.
+
+        </p>
+       
+      </article>
+
     </div>
+
+  </div>
   </body>
 </html>
