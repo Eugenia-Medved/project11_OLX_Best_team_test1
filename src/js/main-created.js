@@ -12,8 +12,8 @@ const refs = {
   logoEL: document.querySelector('.js-logo-open'),
   mainContainerEL: document.querySelector('.js-render-main-page'),
 };
-console.log(refs.logoEL);
-console.log(refs.mainContainerEL);
+// console.log(refs.logoEL);
+// console.log(refs.mainContainerEL);
 
 refs.logoEL.addEventListener('click', getCard);
 
