@@ -199,10 +199,10 @@
 }
 .add-share{
     display: flex;
-
+    // fill: ;
     
     color: rgba(135, 134, 134, 1); 
-    // fill:  rgba(135, 134, 134, 1);
+    
     // fill: black;
     // justify-content: center;
     margin-bottom: 30px;
@@ -215,10 +215,18 @@
 
 }
 .share:last-child {
+    
     @media screen and (min-width: 321px) {
         margin-left: 47px;
        
     }
+}
+.share-button{
+    fill:  rgba(135, 134, 134, 1);
+    border-style: none;
+    outline-style: none;
+    background-color: inherit;
+    color: rgba(135, 134, 134, 1); 
 }
 .share{
     display: flex;

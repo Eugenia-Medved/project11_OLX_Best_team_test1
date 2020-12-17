@@ -11,11 +11,12 @@ const refsAdvert={
   sellerTime: document.querySelector('.js-seller-time'),
   sellerTel: document.querySelector('.js-seller-tel'),
   favorBtn: document.querySelector('.js-advert-favorites'),
-  
+  modal: document.querySelector('.advert-modal'),
+  addShare:document.querySelector('.add-share'),
 }
 
 // console.log(refsAdvert.advertTitle.textContent);
-// console.log(refsAdvert.openModal);
+console.log(refsAdvert.modal);
 // console.log(refsAdvert.advertCloseModal);
 // refsAdvert.cardAdvert.addEventListener('click', addModalAdvert);
 
@@ -36,7 +37,7 @@ const options ={
 
 
 
-let id = '';
+// let id = '';
 
 document.addEventListener('click', addModalAdvert)
 
@@ -54,18 +55,11 @@ refsAdvert.openModal.addEventListener('click', onModalBackdropClick);
 // console.log(localStorage.getItem('accessToken'));
 
 function PostInFavorit() {
-  
-  //  if (localStorage.getItem('accessToken')){
-    console.log(id);
-  //   console.log(options);
-    return fetch(`${BASE_URL}${id}`, options)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch(error => {
-        console.log(error);
-      })	
-  //  }
-
+  refsAdvert.favorBtn.dataset.favoriteBbuttonMarked='data-favorite-button-marked';
+  // data-favorite-item='data-favorite-item'
+  console.dir(refsAdvert.favorBtn.dataset);
+  refsAdvert.addShare.dataset.favoriteItem = 'data-favorite-item';
+  refsAdvert.addShare.dataset.item='';
 }
 
 
@@ -87,7 +81,7 @@ function addModalAdvert(event) {
     refsAdvert.openModal.classList.remove('is-hidden');
     
    
-   
+  
     // console.dir(target.parentElement);
     // рендерить и подставлять фотки под основной картинкой.
 
@@ -97,6 +91,7 @@ function addModalAdvert(event) {
 // Функции закрытия модалки
 function modalClose() {
   refsAdvert.openModal.classList.add('is-hidden');
+  refsAdvert.addShare.id = '';
 }
 function modalEscClose(evt) {
   if (evt.key === "Escape") {
@@ -118,8 +113,12 @@ function changeImgOnAdvert(target) {
 
 function changeAdvertTitle(target) {
   let item = target.parentElement.children;
-  // console.dir(target.parentElement.id);
- id= target.parentElement.id;
+  
+  refsAdvert.addShare.id = target.parentElement.id;
+  console.log(refsAdvert.addShare.id);
+  // console.dir(target.parentElement);
+  // id= target.parentElement.id;
+
   
   // console.log(id);
   refsAdvert.advertTitle.textContent='';
