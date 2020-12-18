@@ -1,3 +1,4 @@
+
 const mainRenderPageEl = document.querySelector('body');
 // логин: test@test.com Пароль: Qwerty123
 // Переменные для ввода данных
@@ -23,19 +24,9 @@ function deleteFavoriteItem(URL, keyPart, id, options) {
 }
 // Функция удаления карточки из модального окна
 function deleteCardFromModal(evt) {
-
-  if (evt.target.hasAttribute('data-favorite-button-marked') || evt.target.classList.contains('js-marked')) {
+  if (evt.target.hasAttribute('data-favorite-button-marked')) {
     evt.target.closest('[data-favorite-item]').remove();
     const id = evt.target.closest('[data-favorite-item]').getAttribute('id');
     deleteFavoriteItem(URL, keyPart, id, options);
   }
-
-
-  //  Код Белика Сергея 
-  // if (evt.target.classList.contains('js-marked')) {
-  //   const id = evt.target.closest('[data-item]').getAttribute('id');
-  //   deleteFavoriteItem(URL, keyPart, id, options);
-  //   evt.target.classList.remove('js-marked');
-  //   console.log(evt.target.classList);
-  // }
 }

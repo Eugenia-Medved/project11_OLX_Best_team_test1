@@ -13,10 +13,12 @@ const refsAdvert={
   favorBtn: document.querySelector('.js-advert-favorites'),
   modal: document.querySelector('.advert-modal'),
   addShare:document.querySelector('.add-share'),
+  iconHeartContured: document.querySelector('[data-heartIconContured]'),
+  iconHeartFull:document.querySelector('[data-heartIconFull]'),
 }
 
 // console.log(refsAdvert.advertTitle.textContent);
-console.log(refsAdvert.modal);
+// console.log(refsAdvert.modal);
 // console.log(refsAdvert.advertCloseModal);
 // refsAdvert.cardAdvert.addEventListener('click', addModalAdvert);
 
@@ -41,7 +43,7 @@ const options ={
 
 document.addEventListener('click', addModalAdvert)
 
-refsAdvert.favorBtn.addEventListener('click', PostInFavorit);
+// refsAdvert.favorBtn.addEventListener('click', PostInFavorit);
 
 // // закрытие модалки через кнопку
 refsAdvert.advertCloseModal.addEventListener('click', modalClose);
@@ -54,19 +56,23 @@ refsAdvert.openModal.addEventListener('click', onModalBackdropClick);
 
 // console.log(localStorage.getItem('accessToken'));
 
-function PostInFavorit() {
-  refsAdvert.favorBtn.dataset.favoriteBbuttonMarked='data-favorite-button-marked';
-  // data-favorite-item='data-favorite-item'
-  console.dir(refsAdvert.favorBtn.dataset);
-  refsAdvert.addShare.dataset.favoriteItem = 'data-favorite-item';
-  refsAdvert.addShare.dataset.item='';
-}
+// function PostInFavorit() {
+//   refsAdvert.favorBtn.dataset.favoriteBbuttonMarked='data-favorite-button-marked';
+//   // data-favorite-item='data-favorite-item'
+//   console.dir(refsAdvert.favorBtn.dataset);
+//   refsAdvert.addShare.dataset.favoriteItem = 'data-favorite-item';
+//   refsAdvert.addShare.dataset.item='';
+// }
 
 
 
 // Функция открытия модалки
 function addModalAdvert(event) {
   let target = event.target;
+  if (target.parentElement.dataset.marked === 'true'){
+      refsAdvert.iconHeartFull.classList.remove('visually-hidden');
+      refsAdvert.iconHeartContured.classList.add('visually-hidden');
+  }
 
 // console.dir(target.parentElement.children[1].textContent);
   if (target.parentElement.classList[0] ==='card-item') {

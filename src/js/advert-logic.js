@@ -3,9 +3,11 @@ const refs ={
     btnInfoSeller: document.querySelector('.js-info-seller'),
     info: document.querySelector('.js-info'),
     infoSeller: document.querySelector('.js-seller-on'),
-  
+    // iconHeartContured: document.querySelector('[data-heartIconContured]'),
+    // iconHeartFull:document.querySelector('[data-heartIconFull]'),
 }
-// console.dir(refs.favorBtn);
+// console.dir(refs.iconHeartContured);    
+// console.dir(refs.iconHeartFull);                             
 
 refs.btnInfoSeller.addEventListener('click', showSellerInfo);
 
