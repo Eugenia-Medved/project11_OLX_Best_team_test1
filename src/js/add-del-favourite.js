@@ -59,7 +59,7 @@ async function deleteFavoriteItem(URL, keyPart, id, optionsDel) {
   }
   // Функция удаления карточки из модального окна
 function deleteCardFromModal(evt) {
-    // console.log(iconHeartFull.classList);
+    console.log(iconHeartFull.classList);
     iconHeartFull.classList.add('visually-hidden');
     iconHeartContured.classList.remove('visually-hidden');
     // console.log(evt.target.dataset.marked);

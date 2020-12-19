@@ -74,7 +74,7 @@ function addModalAdvert(event) {
       refsAdvert.iconHeartContured.classList.add('visually-hidden');
   }
 
-// console.dir(target.parentElement.children[1].textContent);
+ // console.dir(target.parentElement.children[1].textContent);
   if (target.parentElement.classList[0] ==='card-item') {
     // обнуление картинки
     refsAdvert.advertIMG.src = '/';
@@ -121,7 +121,7 @@ function changeAdvertTitle(target) {
   let item = target.parentElement.children;
   
   refsAdvert.addShare.id = target.parentElement.id;
-  console.log(refsAdvert.addShare.id);
+  // console.log(refsAdvert.addShare.id);
   // console.dir(target.parentElement);
   // id= target.parentElement.id;
 
