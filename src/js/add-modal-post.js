@@ -10,21 +10,21 @@ const addPrice = addForm.querySelector('.js-add-price');
 const addPhone = addForm.querySelector('.js-add-phone');
 // const addPhoto = addForm.querySelectorAll('.add-photo-btn')
 
-let newItem = {
-    "title": addName.value,
-    "description": addDescr.value,
-    "category": addCategory.value,
-    "price": Number(addPrice.value),
-    "phone": addPhone.value,
-    // "imageUrls": [
-    //     "string"
-    // ],
-};
-validateBtn.addEventListener('click', qwerty);
+// let newItem = {
+//     "title": addName.value,
+//     "description": addDescr.value,
+//     "category": addCategory.value,
+//     "price": Number(addPrice.value),
+//     "phone": addPhone.value,
+//     // "imageUrls": [
+//     //     "string"
+//     // ],
+// };
+// validateBtn.addEventListener('click', qwerty);
 
-function qwerty(newItem) {
-    console.log(newItem);
-}
+// function qwerty(newItem) {
+//     console.log(newItem);
+// }
 // function addModalPost(item) {
 //     const options = {
 //     method: 'POST',
