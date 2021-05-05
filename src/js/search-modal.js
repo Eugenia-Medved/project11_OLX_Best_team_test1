@@ -14,19 +14,19 @@ class NewsApiService {
   this.searchQuery = '';
   this.page = 1;       
   }    
-incrementPage() {
-  this.page += 1;
-  // console.log('this.page+1:', this.page);
-}
-resetPage() {
-  this.page = 1;
-  // console.log('this.page home:', this.page);
-}
-get query() {
-  return this.searchQuery;
-}
-set query(newQuery) {
-  this.searchQuery = newQuery;
+  incrementPage() {
+    this.page += 1;
+    // console.log('this.page+1:', this.page);
+  }
+  resetPage() {
+    this.page = 1;
+    // console.log('this.page home:', this.page);
+  }
+  get query() {
+    return this.searchQuery;
+  }
+  set query(newQuery) {
+    this.searchQuery = newQuery;
 }};
 
 const newsApiService=new NewsApiService();
@@ -74,12 +74,10 @@ function onOpenModal(evt) {
 function onSearch(e) {
 
 // console.log('Клик был, функция onSearch запущена!!!!');
-
- newsApiService.query=searchObject.value;
- //console.dir(newsApiService.query.length);
- if (newsApiService.query === '') {
-    
-  return alert('Enter search parameters!');   
+  newsApiService.query=searchObject.value;
+  //console.dir(newsApiService.query.length);
+  if (newsApiService.query === '') {
+    return alert('Enter search parameters!');   
   }
   
  
@@ -88,10 +86,10 @@ function onSearch(e) {
     document.getElementById('mySearch').value = "";
   //console.dir(newsApiService.query);
   
- return postData(API + newsApiService.query).then(data => {
+  return postData(API + newsApiService.query).then(data => {
     appendMarkup(data); 
     newsApiService.incrementPage(); 
-   // console.log(data.length); 
+  //  console.log(data); 
    
    
   }).catch(error=>{
@@ -126,19 +124,20 @@ function onCloseModal() {
 };
 
 function onOverlay(evt) {
-    if (evt.target !== evt.currentTarget) {
-      return
-    }
-   onCloseModal()
-  };
+  if (evt.target !== evt.currentTarget) {
+    return
+  }
+  onCloseModal()
+};
 
 function appendMarkup(arg) {
-
   if (arg.length === 0) {
-    return alert('Enter search parameters!');
-      }
-      mainContainerEL.insertAdjacentHTML('afterbegin', cardTpl(arg));
-      onCloseModal(); 
+    return alert('Nothin found');
+  }
+  mainContainerEL.insertAdjacentHTML('afterbegin', cardTpl(arg));
+  // mainContainerEL.innerHTML = "<h1>Работает</h1>";
+  // console.log(cardTpl(arg));
+  onCloseModal(); 
 };
 
 function clearContainer() {

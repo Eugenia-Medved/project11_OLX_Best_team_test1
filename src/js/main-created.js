@@ -50,12 +50,15 @@ function onClearBtnClick() {
 }
 
 async function createCategoryMenu(e) {
+  if (e.target.nodeName !== "A") {
+    return;
+  }
   refs.paginatorPagesEL.classList.add('visually-hidden');
   clearArticlesContainer();
   const keyCategory = e.target.dataset.id;
   history.replaceState({ keyCategory }, ` ${keyCategory}`, `/${keyCategory}`);
   await postData(KAYCATEGORY, keyCategory).then(data => {
-    console.log('---', data);
+    // console.log('---', data);
 
     createCategoryMarkup(data, keyCategory, categoryTpl);
   });

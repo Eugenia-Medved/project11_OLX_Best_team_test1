@@ -6,7 +6,6 @@ const refs = {
 };
 
 refs.openModalBtn.addEventListener('click', addModalOpen);
-
 // закрытие модалки через кнопку
 refs.closeModalBtn.addEventListener('click', modalClose);
 

@@ -26,7 +26,7 @@ const fn = arr => arr.map(el => {
   return item;
  });
 
-console.log(fn(['html', 'css', 'js', 'react']));
+// console.log(fn(['html', 'css', 'js', 'react']));
 // console.log(refsAdvert.advertTitle.textContent);
 // console.log(refsAdvert.modal);
 // console.log(refsAdvert.advertCloseModal);

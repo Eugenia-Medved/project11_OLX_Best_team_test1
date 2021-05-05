@@ -13,122 +13,127 @@
   <!-- Header -->
 
   <header class="page-header">
-    <div class=" header-buttons">
-      <div class="header-button-seach">
-        <div class="header-content">
-          <button class="button-seach" id="search-modal">
-            <svg width="24px" height="24px" aria-label="Поиск">
-              <use class="icon-cross" href="./symbol-defs.svg#icon-search"></use>
+    <div class="header-container">
+      <nav class="header-nav">
+      
+        <button type="button" class="menu-button" data-menu-button>
+          <svg class="icon-menu" width="20px" height="20px" aria-label="Переключатель мобильного меню">
+            <use href="./symbol-defs.svg#icon-menu"></use>
+          </svg>
+        </button>
+      
+        <a href="#main" class="logo js-logo-open">LOGO</a>
+      
+        <button class="button-seach" id="search-modal">
+          <svg class="icon-search" width="24px" height="24px" aria-label="Поиск">
+            <use href="./symbol-defs.svg#icon-search"></use>
+          </svg>
+        </button>
+      
+        <div class="auth-nav">
+          <button class="btn-log-and-reg js-btn-log-and-reg">
+            <svg width="20px" height="20px" aria-label="Use Profil">
+              <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
             </svg>
+            <span class="text-log-and-reg">Реєстрація / Увійти</span>
           </button>
-
-
-          <a href="#main" class="logo js-logo-open">LOGO</a>
-
-          <div class="auth">
-
+      
+          <div class="nav-my-off">
+            <div class="my-office visually-hidden">
+              <button class="my-office-btn js-my-office-btn">
+                <svg width="20px" height="20px" aria-label="Use Profil">
+                  <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
+                </svg>
+                <span class="nav-my-off-title ">Мій кабінет</span>
+              </button>
+              <button class="btn-go-out icon-logout-close js-btn-go-out">
+                <svg class="icon-go-out" width="20px" height="20px" aria-label="Use Profil">
+                  <use href="./symbol-defs.svg#icon-logout"></use>
+                </svg>
+              </button>
+            </div>
+            <ul class="list-my-off js-list-my-off visually-hidden">
+              <li class="my-off-item"><a href="/" class="my-off-link" id='show-my-ads-button2'>Мої оголошення</a></li>
+              <li class="my-off-item"><a href="/" class="my-off-link" id="show-favorites-button2">Обране</a></li>
+            </ul>
+          </div>
+        </div>
+      
+      
+      
+        <button class="btn-create-adv" id="add-modal-open">
+          <span class="btn-create-tex">Створити оголошення!</span>
+          <svg class="icon-add" width="20px" height="20px" aria-label="Use Profil">
+            <use href="./symbol-defs.svg#icon-add"></use>
+          </svg>
+        </button>
+      
+      </nav>
+      
+      <div class="filter-container">
+        <button class="btn-clear-filter js-btclean-filter">
+          <svg width="20px" height="20px" aria-label="Use Profil" class="icon-refresh">
+            <use class="icon-refresh" href="./symbol-defs.svg#icon-refresh"></use>
+          </svg>
+          <span>Очистити фільтри</span>
+        </button>
+      </div>
+      
+      <!-- Выпадающее меню -->
+      <div class="backdrop visually-hidden" data-header-menu-backdrop>
+      </div>
+      
+      <div class="drop-down-menu hide" data-header-drop-down-menu>
+        <button type="button" class="close-button">
+          <svg width="14px" height="14px" aria-label="Закрытие мобильного окна">
+            <use class="icon-close" href="./symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      
+        <ul class="header-menu">
+          <li class="site-nav-item ">
             <button class="btn-log-and-reg js-btn-log-and-reg ">
-              <svg   width="20px" height="20px" aria-label="Use Profil">
-                <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
-              </svg> <span class="text-log-and-reg">Реєстрація / Увійти</span></button>
-            <div class="my-office icon-userBlock visually-hidden">
               <svg width="20px" height="20px" aria-label="Use Profil">
                 <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
               </svg>
-              <ul class="nav-my-off">
-                <li class="btn-my-off js-btn-my-off"><span class="icon-logout-Close">Мій кабінет</span>
-                  <ul class="list-my-off">
-                    <li class="my-off-item"><a href="/" class="my-off-link" id='show-my-ads-button1'>Мої оголошення!</a></li>
-                    <li class="my-off-item"><a href="/" class="my-off-link" id="show-favorites-button1">Обране!</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <button class=" Btn-Go-out icon-logout-Close js-btn-Go-out">
-                <svg width="20px" height="20px" aria-label="Use Profil">
-                  <use class="icon-Go-out" href="./symbol-defs.svg#icon-logout"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn-create-adv" id="add-modal-open">
-          <span class="btn-create-tex">Створити оголошення!</span>
-          <div class="icon-addClose">
-            <svg width="20px" height="20px" aria-label="Use Profil">
-              <use class="icon-add" href="./symbol-defs.svg#icon-add"></use>
-            </svg>
-          </div>
-
-        </button>
-      </div>
-
-      <nav class="header-nav">
-
-        <div class="icon-Close">
-          <button type="button" class="menu-button is-open" width="20px" height="20px" aria-expended="false"
-            aria-controls="menu-container" data-menu-button>
-
-            <svg width="20px" height="20px" aria-label="Переключатель мобильного меню">
-              <use class="icon-menu" href="./symbol-defs.svg#icon-menu"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="menu-container" id="header-block" data-menu>
-          <div class="site-nav">
-            <div class="icon-Close">
-              <button type="button" class="close-button">
-                <svg width="20px" height="20px" aria-label="Закрытие мобильного меню">
-                  <use class="icon-close" href="./symbol-defs.svg#icon-close"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="auth icon-Close my-office-on">
-              <button class="btn-log-and-reg js-btn-log-and-reg">
-                <svg width="20px" height="20px" aria-label="Use Profil">
-                  <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
-                </svg>
-                Реєстрація / Увійти
-              </button>
+              <span class="text-log-and-reg">Реєстрація / Увійти</span>
+            </button>
+      
+      
+            <div class="nav-my-off">
               <div class="my-office visually-hidden">
-                <svg class="icon-cross" width="20px" height="20px" aria-label="Use Profil">
-                  <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
-                </svg>
-                <ul class="nav-my-off">
-                  <li class="btn-my-off js-btn-my-off ">Мій кабінет
-                    <ul class="list-my-off">
-                      <li class="my-off-item"><a href="/" class="my-off-link" id='show-my-ads-button2'>Мої оголошення</a></li>
-                      <li class="my-off-item"><a href="/" class="my-off-link" id="show-favorites-button2">Обране</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                <button class="my-office-btn js-my-office-btn">
+                  <svg width="20px" height="20px" aria-label="Use Profil">
+                    <use class="icon-cross" href="./symbol-defs.svg#icon-user"></use>
+                  </svg>
+                  <span class="nav-my-off-title">Мій кабінет</span>
+                </button>
+                <button class="btn-go-out js-btn-go-out">
+                  <svg width="20px" height="20px" aria-label="Use Profil">
+                    <use class="icon-go-out" href="./symbol-defs.svg#icon-logout"></use>
+                  </svg>
+                </button>
               </div>
+              <ul class="list-my-off js-list-my-off visually-hidden">
+                <li class="my-off-item"><a href="#" class="my-off-link" id='show-my-ads-button1'>Мої оголошення</a></li>
+                <li class="my-off-item"><a href="#" class="my-off-link" id="show-favorites-button1">Обране</a></li>
+              </ul>
             </div>
-            <ul class="header-menu">
-              <li class="site-nav-item "><a href="#property" class="link" data-id="property">Нерухомість</a></li>
-              <li class="site-nav-item "><a href="#transport" class="link" data-id="transport">Транспорт</a></li>
-              <li class="site-nav-item "><a href="#work" class="link" data-id="work">Робота</a></li>
-              <li class="site-nav-item "><a href="#electronics" class="link" data-id="electronics">Електроніка</a></li>
-              <li class="site-nav-item "><a href="#businessAndServices" class="link" data-id="businessAndServices">Бізнес та послуги</a>
-              </li>
-              <li class="site-nav-item "><a href="#recreationAndSport" class="link" data-id="recreationAndSport">Відпочинок та спорт</a>
-              </li>
-              <li class="site-nav-item "><a href="#free" class="link" data-id="free">Віддам безкоштовно</a></li>
-              <li class="site-nav-item"><a href="#trade" class="link" data-id="trade">Обмін</a></li>
-            </ul>
-          </div>
-
-
-          <div class="conteiner-refresh">
-            <svg width="20px" height="20px" aria-label="Use Profil" class="icon-refresh">
-              <use class="icon-refresh" href="./symbol-defs.svg#icon-refresh"></use>
-            </svg>
-            <button class="btclean-filter js-btclean-filter">Очистити фільтр</button>
-          </div>
-
-
-        </div>
-      </nav>
+          </li>
+          <li class="site-nav-item "><a href="#property" class="link" data-id="property">Нерухомість</a></li>
+          <li class="site-nav-item "><a href="#transport" class="link" data-id="transport">Транспорт</a></li>
+          <li class="site-nav-item "><a href="#work" class="link" data-id="work">Робота</a></li>
+          <li class="site-nav-item "><a href="#electronics" class="link" data-id="electronics">Електроніка</a></li>
+          <li class="site-nav-item "><a href="#businessAndServices" class="link" data-id="businessAndServices">Бізнес та
+              послуги</a>
+          </li>
+          <li class="site-nav-item "><a href="#recreationAndSport" class="link" data-id="recreationAndSport">Відпочинок та
+              спорт</a>
+          </li>
+          <li class="site-nav-item "><a href="#free" class="link" data-id="free">Віддам безкоштовно</a></li>
+          <li class="site-nav-item"><a href="#trade" class="link" data-id="trade">Обмін</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -182,7 +187,7 @@
     </div>
   </div>
   <!-- Modal to order -->
-  <div class="is-hidden"></div>
+  <!-- <div class="is-hidden"></div> -->
   <!-- Modal to new advert -->
     <!-- Modal Мої оголошення -->
     <section class="section my-ads-section" id="my-ads-section">
@@ -214,98 +219,98 @@
     </section>
   <!--Модалка Додати оголошення-->
   <div class="add-backdrop js-add-modal visually-hidden" id="add-backdrop-for-ad">
-      <div class="add-modal">
-        <form class="add-modal-form" id="add-form">
-          <a add-modal-close href="#" aria-label="Close" class="add-modal-close"
-            ><svg class="icon-close">
-              <use href="./symbol-defs.svg#icon-close"></use>
-            </svg></a>
-          <h2 class="add-modal-title">Додати оголошення</h2>
-          <div class="add-modal-container">
-            <label for="name" class="add-modal-field">Назва товару</label>
-            <input
-              class="add-modal-input js-add-name js-add-input"
-              type="text"
-              name="title"
-              id="name"
-              placeholder=" "
-            />
-          </div>
-          <div class="add-modal-container add-photo-container">
-            <h3 class="add-modal-field">Фото</h3>
-            <div class="download-btns add-modal-valid-photo">
-              <ul class="preview-list">
-                <li class="add-preview">
-                  <label class="label-photo-btn" for="file">+</label>
-                  <input
-                  class="add-photo-btn js-add-input js-add-photo"
-                  type="file"
-                  name="file"
-                  id="file"
-              /></li>
-              </ul>
-              <!-- <label class="label-photo-btn" for="file2">+</label>
-              <input
-                class="add-photo-btn"
+    <div class="add-modal">
+      <form class="add-modal-form" id="add-form">
+        <a add-modal-close href="#" aria-label="Close" class="add-modal-close"
+          ><svg class="icon-close">
+            <use href="./symbol-defs.svg#icon-close"></use>
+          </svg></a>
+        <h2 class="add-modal-title">Додати оголошення</h2>
+        <div class="add-modal-container">
+          <label for="name" class="add-modal-field">Назва товару</label>
+          <input
+            class="add-modal-input js-add-name js-add-input"
+            type="text"
+            name="title"
+            id="name"
+            placeholder=" "
+          />
+        </div>
+        <div class="add-modal-container add-photo-container">
+          <h3 class="add-modal-field">Фото</h3>
+          <div class="download-btns add-modal-valid-photo">
+            <ul class="preview-list">
+              <li class="add-preview">
+                <label class="label-photo-btn" for="file">+</label>
+                <input
+                class="add-photo-btn js-add-input js-add-photo"
                 type="file"
-                accept="image/*"
-                name="file2"
-                id="file2"
-              /> -->
-            </div>
+                name="file"
+                id="file"
+            /></li>
+            </ul>
+            <label class="label-photo-btn" for="file2">+</label>
+            <input
+              class="add-photo-btn"
+              type="file"
+              accept="image/*"
+              name="file2"
+              id="file2"
+            />
           </div>
+        </div>
 
-          <div class="add-modal-container">
-            <label for="description" class="add-modal-field">Опис товару</label>
-            <textarea
-              class="add-modal-input add-textarea js-add-description js-add-input"
-              name="description"
-              rows="5"
-              cols="45"
-              id="description"
-              placeholder=" "
-            ></textarea>
-          </div>
-          <div class="add-modal-container">
-            <label for="category" class="add-modal-field"
-              >Категорія товару</label>
-            <select
-              class="add-modal-input js-category-input js-add-input"
-              name="category"
-              id="category"
-            >
-              <!-- <option value="" class="add-modal-category">
-                  Оберіть категорію
-                </option> -->
-            </select>
-          </div>
-          <div class="add-modal-container">
-            <label for="price" class="add-modal-field">Ціна</label>
-            <input
-              class="add-modal-input js-add-price js-add-input"
-              type="text"
-              name="price"
-              id="price"
-              autocomplete="off"
-              minlength="1"
-              maxlength="16"
-              placeholder="0.00 грн"
-            />
-          </div>
-          <div class="add-modal-container">
-            <label for="tel" class="add-modal-field">Телефон</label>
-            <input
-              class="add-modal-input js-add-phone js-add-input"
-              type="tel"
-              name="phone"
-              id="tel"
-              placeholder="+38 (0--) --- -- --"
-            />
-          </div>
-          <button type="button" class="add-modal-btn btn">ДОДАТИ</button>
-        </form>
-      </div>
+        <div class="add-modal-container">
+          <label for="description" class="add-modal-field">Опис товару</label>
+          <textarea
+            class="add-modal-input add-textarea js-add-description js-add-input"
+            name="description"
+            rows="5"
+            cols="45"
+            id="description"
+            placeholder=" "
+          ></textarea>
+        </div>
+        <div class="add-modal-container">
+          <label for="category" class="add-modal-field"
+            >Категорія товару</label>
+          <select
+            class="add-modal-input js-category-input js-add-input"
+            name="category"
+            id="category" 
+          >
+            <option value="" class="add-modal-category">
+                Оберіть категорію
+              </option>
+          </select>
+        </div>
+        <div class="add-modal-container">
+          <label for="price" class="add-modal-field">Ціна</label>
+          <input
+            class="add-modal-input js-add-price js-add-input"
+            type="text"
+            name="price"
+            id="price"
+            autocomplete="off"
+            minlength="1"
+            maxlength="16"
+            placeholder="0.00 грн"
+          />
+        </div>
+        <div class="add-modal-container">
+          <label for="tel" class="add-modal-field">Телефон</label>
+          <input
+            class="add-modal-input js-add-phone js-add-input"
+            type="tel"
+            name="phone"
+            id="tel"
+            placeholder="+38 (0--) --- -- --"
+          />
+        </div>
+        <button type="button" class="add-modal-btn btn">ДОДАТИ</button>
+      </form>
     </div>
+  </div>
   <!-- Modal to login -->
   <div class="backdrop-log-and-reg visually-hidden" data-modal-log-and-reg>
     <div class="modal-log-and-reg">

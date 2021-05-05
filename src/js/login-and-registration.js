@@ -1,15 +1,18 @@
 import { login, registration, getUser, logout } from './API-login-and-registration';
 import { loadKey, saveKey, deleteKey } from './local-storage';
+import { onCloseMenu } from './menu';
 
 const debounce = require('lodash.debounce');
 
 const refs = {
 	modalLogAndReg: document.querySelector("[data-modal-log-and-reg]"),
-	btnModalLogAndReg: document.querySelectorAll(".js-btn-log-and-reg"),
+	buttonsModalLogAndReg: document.querySelectorAll(".js-btn-log-and-reg"),
 	containerMyOffice: document.querySelectorAll(".my-office"),
-	btnMyOffice: document.querySelector(".js-btn-my-off"),
-	btnLogout: document.querySelector(".js-btn-Go-out"),
+	buttonsMyOffice: document.querySelectorAll(".js-my-office-btn"),
+	btnLogout: document.querySelector(".js-btn-go-out"),
 	bodyEl: document.querySelector("body"),
+	groupButtonsMyOffice: document.querySelectorAll('.my-office'),
+	listItemsMyOffice: document.querySelectorAll('.js-list-my-off'),
 };
 
 const notifications = {
@@ -36,9 +39,9 @@ const notificationErrorPasswordEl = refs.modalLogAndReg.querySelector(".notifica
 
 refs.modalLogAndReg.addEventListener('click', onBackdrop);
 refs.bodyEl.addEventListener('keydown', onPressEsc);
-refs.btnModalLogAndReg[0].addEventListener('click', onBtnLogAndRegModal);
-refs.btnModalLogAndReg[1].addEventListener('click', onBtnLogAndRegModal);
+refs.buttonsModalLogAndReg.forEach(btn => btn.addEventListener('click', onBtnLogAndRegModal));
 refs.btnLogout.addEventListener('click', onBtnLogout);
+refs.buttonsMyOffice.forEach(btn => btn.addEventListener('click', onBtnMyOffice));
 btnGoogleAutorisation.addEventListener('click', onBtnGoogleAutorisation);
 btnRegistration.addEventListener('click', onBtnRegistration);
 btnLogin.addEventListener('click', onBtnLogin);
@@ -60,6 +63,7 @@ function onPressEsc(event) {
 
 function onBtnLogAndRegModal() {
 	toggleModal(refs.modalLogAndReg);
+	onCloseMenu();
 }
 
 //Проверка проходила-ли авторизация Google или это новое открытое окно
@@ -78,6 +82,9 @@ if (loadKey('googleAutorusation') === true) {
 	location.search = '';
 }
 
+// const tmp = loadKey('accessToken');
+// console.log(tmp);
+// debugger;
 if (loadKey('accessToken') != undefined) {
 	chengeVisibilityElementsByLoginAndLogout();
 }
@@ -151,16 +158,16 @@ async function onLogin(email, password) {
 }
 
 function onBtnLogout(event) {
-	!onLogouth(loadKey('accessToken')); 
+	onLogout(loadKey('accessToken')); 
 
 	chengeVisibilityElementsByLoginAndLogout();
 }
 
-async function onLogouth(accessToken) {
+async function onLogout(accessToken) {
 	localStorage.clear();	
 	await logout(accessToken)
 		.then((data) => {
-			localStorage.clear();			
+			localStorage.clear();
 			return true;
 		})
 		.catch(error => {
@@ -169,13 +176,13 @@ async function onLogouth(accessToken) {
 		})
 }
 
+function onBtnMyOffice() {
+	refs.listItemsMyOffice.forEach(btn => btn.classList.toggle('visually-hidden'));
+}
+
 function chengeVisibilityElementsByLoginAndLogout() {
-	// console.log(refs.containerMyOffice);
-	// refs.btnLogout.classList.toggle("visually-hidden");
-	refs.containerMyOffice[0].classList.toggle("visually-hidden");
-	refs.containerMyOffice[1].classList.toggle("visually-hidden");
-	refs.btnModalLogAndReg[0].classList.toggle("visually-hidden");
-	refs.btnModalLogAndReg[1].classList.toggle("visually-hidden");
+	refs.groupButtonsMyOffice.forEach(btn => btn.classList.toggle('visually-hidden'));
+	refs.buttonsModalLogAndReg.forEach(btn => btn.classList.toggle('visually-hidden'));
 }
 
 const onInputValue = debounce(() => {
